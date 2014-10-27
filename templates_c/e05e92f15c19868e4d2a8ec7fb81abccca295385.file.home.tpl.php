@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-23 21:21:33
-         compiled from "./templates/default/home.tpl" */ ?>
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-27 22:24:04
+         compiled from "templates/default/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:397366720544598dcdf39a1-96479290%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e05e92f15c19868e4d2a8ec7fb81abccca295385' => 
     array (
-      0 => './templates/default/home.tpl',
-      1 => 1414088100,
+      0 => 'templates/default/home.tpl',
+      1 => 1414360530,
       2 => 'file',
     ),
   ),
@@ -42,10 +42,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
 		<strong>Внимание !</strong> Прежде чем начать рассылку <a href="smtp_test.php">проверьте</a>
 		правильность настройки SMTP сервисов с которыми вы работаете, и удостоверьтесь что ваш сервер позволяет работать с SMTP рассылкой. Многие Shared хостинги ограничиввают своих пользователей в этом, чтобы включить такую возможность обратитись в техподдержку своего хостера или же установите скрипт на локальной машине.</p>
-	</div>
-	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-		<strong>Также:</strong> Сейчас вы находитесь на демонстрационном сайте чей хостинг запрещает SMTP запросы к другим серверам.Режим рассылки с множественных аккунтов здесь не работает.</p>
 	</div>
 </div>
 
