@@ -1,0 +1,156 @@
+File: '/var/www/lazarsender/handlers/admin/save_notes.php' Line: 18 
+2014-10-19  14:48:36 
+1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 28 
+2014-10-19  14:48:45 
+1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 28 
+2014-10-19  14:48:51 
+1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 28 
+2014-10-19  14:48:57 
+1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 81 
+2014-10-19  15:10:46 
+Не удалось выбрать группы1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 81 
+2014-10-19  15:10:58 
+Не удалось выбрать группы1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 81 
+2014-10-19  15:10:59 
+Не удалось выбрать группы1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 81 
+2014-10-19  15:11:01 
+Не удалось выбрать группы1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/handlers/groups/delete_group.php' Line: 15 
+2014-10-19  17:25:41 
+Не удалось удалить группу1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/handlers/groups/delete_group.php' Line: 20 
+2014-10-19  17:25:41 
+Не удалось удалить адреса группы1045 Access denied for user 'www-data'@'localhost' (using password: NO)
+
+File: '/var/www/lazarsender/include/functions.php' Line: 94 
+2014-10-19  18:12:05 
+Groups selecting failedArray
+
+File: '/var/www/lazarsender/include/functions.php' Line: 94 
+2014-10-19  18:12:25 
+Array
+
+File: '/var/www/lazarsender/include/functions.php' Line: 94 
+2014-10-19  18:13:12 
+Array
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-19  18:49:01 
+Временный файл /var/www/lazarsender/tmp\1413733741_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-19  18:49:36 
+Временный файл /var/www/lazarsender/tmp\1413733776_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-21  4:38:44 
+Временный файл /var/www/lazarsender/tmp\1413855524_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:29:11 
+Временный файл /var/www/lazarsender/tmp\1413980951_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:34:45 
+Временный файл /var/www/lazarsender/tmp/1413981285_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:35:36 
+Временный файл /var/www/lazarsender/tmp/1413981336_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:35:44 
+Временный файл /var/www/lazarsender/tmp/1413981344_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:37:13 
+Временный файл /var/www/lazarsender/tmp/1413981433_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:41:45 
+Временный файл /var/www/lazarsender/tmp/1413981705_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:41:59 
+Временный файл /var/www/lazarsender/tmp/1413981719_email.txt не удален
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-10-22  15:42:10 
+Временный файл /var/www/lazarsender/tmp/1413981730_email.txt не удален
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:08:46 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:08:59 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:11:06 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:11:29 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:12:24 
+()
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:12:33 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:13:27 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:14:00 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:14:34 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:15:14 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:19:01 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 38 
+2014-10-22  17:19:14 
+Array
+
+File: '/var/www/lazarsender/handlers/senders/edit_sender.php' Line: 39 
+2014-10-22  17:22:44 
+Array
+
+File: '/var/www/lazarsender/sender.php' Line: 176 
+2014-10-26  16:45:40 
+42S22,1054,Unknown column 'emailscount' in 'field list'
+
+File: '/var/www/lazarsender/sender.php' Line: 190 
+2014-10-26  16:45:40 
+42S22,1054,Unknown column 'sentcount' in 'field list'
+

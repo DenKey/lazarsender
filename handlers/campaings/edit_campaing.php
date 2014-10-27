@@ -1,0 +1,54 @@
+<?php
+	require_once '../../include/auth.php';
+	require_once '../../include/db_connect.php';
+
+if (isset($_REQUEST['id']) && isset($_REQUEST['name']) && isset($_REQUEST['subject'])) {
+		$name     = $_REQUEST['name'];
+		$subject  = $_REQUEST['subject'];
+		$id 	  = intval($_REQUEST['id']);
+	
+			$check_query = sprintf("SELECT * FROM campaings WHERE id='%d'",
+		 							$id);
+			$stm =  $pdo->prepare($check_query);
+		 	try {
+				$stm->execute();
+			} catch (PDOException $e) {
+				logging(implode(",",$stm->errorInfo()),true,__FILE__,__LINE__);
+				echo "MySql Error.Watch log.";
+			}
+
+		 	if ($stm->rowCount() == 0) {
+		 		$obj = array('status' => 0);
+				$obj = json_encode($obj);
+		 		echo $obj;
+		 	} else {
+		 		$update_query = sprintf("UPDATE campaings SET name='%s',".
+		 								"subject='%s' WHERE id='%d'",
+										$name,
+										$subject,
+										$id);
+		 		$sth =  $pdo->prepare($update_query);
+			 	try {
+					$sth->execute();
+				} catch (PDOException $e) {
+					logging(implode(",",$sth->errorInfo()),true,__FILE__,__LINE__);
+					echo "MySql Error.Watch log.";
+				}
+
+			 	$obj = array('status' => 1,
+			 				'id' => $id);
+
+			 	$obj = json_encode($obj);
+
+			 	echo $obj;
+		 	}
+
+} else {
+	$obj = array('status' => -1);
+
+	$obj = json_encode($obj);
+
+	exit($obj);
+}
+
+?>
