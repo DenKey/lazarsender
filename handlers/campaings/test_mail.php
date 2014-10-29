@@ -36,6 +36,7 @@
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
+$mail->CharSet = 'UTF-8';
 //Set who the message is to be sent from
 //$mail->setFrom('from@example.com', 'First Last');
 //Set an alternative reply-to address

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-27 22:24:04
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-28 17:56:37
          compiled from "templates/default/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:397366720544598dcdf39a1-96479290%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e05e92f15c19868e4d2a8ec7fb81abccca295385' => 
     array (
       0 => 'templates/default/home.tpl',
-      1 => 1414360530,
+      1 => 1414441900,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="body">
 <p>Добро пожаловать.</p>
-<p><b>Lazar Sender 0.1.1</b> позволяет производить отправку сообщений на электронные адреса
+<p><b>Lazar Sender 0.1.2</b> позволяет производить отправку сообщений на электронные адреса
 пользователей используя аккаунты бесплатных сервисов.Рассылка происходит по протоколу SMTP.
 Алгоритм работы простой, создайте группу пользователей, добавьте в неё емеилы с помощью веб формы или из файла.
 Добавьте аккаунты и SMTP настройки сервисов.Затем можете создать кампанию рассылки, где необходимо выбрать группу рассылки и добавить собственно тему письма и его "тело".Затем во вкладке Кампании->"Управление" можно  приступить к рассылке писем.</p>
