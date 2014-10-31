@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="js/edit_campaing.js"></script>
 {/literal}
 
+
 <div class="body">
 	<form class="pure-form pure-form-stacked" id="edit_campaing" method="POST" action="javascript:void(null);" onsubmit="edit_campaing()">
 		<fieldset>

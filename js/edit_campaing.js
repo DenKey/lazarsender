@@ -32,8 +32,8 @@ tinymce.init({
 				language: 'ru'
 			});
 
-
-var campaing_id = getVar('id');
+$(document).ready(function(){
+	var campaing_id = getVar('id');
 
 	$.ajax({
 		type: "POST",
@@ -76,10 +76,14 @@ var campaing_id = getVar('id');
 			$("[name|='subject']").val(obj_from_json.subject);
 
 
-			tinymce.activeEditor.selection.setContent(str);
+
+				document.getElementById('editor').value = str;
+				tinymce.activeEditor.selection.setContent(str);
+
 		};
 
 	});
+});
 
 
 // Thanks http://scripts.franciscocharrua.com/javascript-get-variables.php
@@ -121,6 +125,7 @@ function getVar(name)
          return(return_value);        
          }
 ///////////
+
 
 function edit_campaing() {
 	var campaing_id =  getVar('id');

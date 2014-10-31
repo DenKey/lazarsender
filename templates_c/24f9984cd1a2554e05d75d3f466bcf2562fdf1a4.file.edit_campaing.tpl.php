@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-26 18:20:47
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-01 00:21:36
          compiled from "templates/default/edit_campaing.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1695105760544676cb8b87e7-32753381%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '24f9984cd1a2554e05d75d3f466bcf2562fdf1a4' => 
     array (
       0 => 'templates/default/edit_campaing.tpl',
-      1 => 1414340437,
+      1 => 1414793974,
       2 => 'file',
     ),
   ),
@@ -34,6 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<?php echo '<script'; ?>
  type="text/javascript" src="js/edit_campaing.js"><?php echo '</script'; ?>
 >
+
 
 
 <div class="body">
