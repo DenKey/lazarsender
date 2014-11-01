@@ -3,7 +3,7 @@
 
 
 
-<div class="body" id="tabs">
+<div id="tabs">
     <ul>
       <li><a href="#tabs-1">Интерфейс</a></li>
       <li><a href="#tabs-2">Отладка рассылок</a></li>

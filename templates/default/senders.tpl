@@ -1,7 +1,12 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Просмотр аккаунтов" page_js="senders.js"}
 
-<div class="body">
+<div id="main">
+	<div class="content">
+			<div class="header">
+	          <p>Количество отображаемых аккаунтов регулируется в <a href="settings.php">Настройках</a></p>
+	        </div>
+	        
 	<table class="pure-table">
 			<thead>
 			 <tr align="center"><td><b>ID</b></td>
@@ -35,6 +40,7 @@
 				{if $get_page_links != "<span>1</span>"}
 					{$get_page_links}
 				{/if}
+	</div>
 </div>
 
 {include file="footer.tpl"}

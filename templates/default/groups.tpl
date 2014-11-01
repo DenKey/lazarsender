@@ -2,7 +2,8 @@
 {include file="header.tpl" title="Управление группами адресов" page_js="groups.js" page_style="groups.css"}
 
 
-	<div class="body">
+<div id="main">
+	<div class="content">
 		<div>
 			<form class="pure-form" method="POST" id="formx" action="javascript:void(null);" onsubmit="add_group()">
 				<label for="create_group">Добавить новую группу</label>
@@ -28,5 +29,6 @@
 			{if $get_page_links != "<span>1</span>"}
 				{$get_page_links}
 			{/if}
-  </div>		
+</div>
+</div>		
 {include file="footer.tpl"}

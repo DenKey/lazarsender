@@ -1,14 +1,15 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Кампании" page_js="campaings.js"}
 
-<div class="body">
+<div id="main">
+	<div class="content">
 	<table class="pure-table">
 		<thead>
 			<tr><td align='center'><b>ID</b></td>
 			<td align='center'><b>Имя кампании</b></td>
 			<td align='center'><b>Группы рассылки</b></td>
 			<td align='center'><b>Тема письма</b></td>
-			<td align='center'>Отправлено</td>
+			<td align='center'><b>Статус</b></td>
 			<td align='center'></td>
 			<td align='center'></td>
 		</thead>
@@ -36,6 +37,6 @@
 		{$get_page_links}
 	{/if}
 
+	</div>
 </div>
-
 {include file="footer.tpl"}

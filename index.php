@@ -1,5 +1,6 @@
 <?php  
 	require_once 'libs/Smarty.class.php';
+	require_once 'include/config.php';
 
 	$smarty = new Smarty();
 
@@ -9,6 +10,8 @@
 	if(isset($_SESSION['user_id'])){
  		 header("Location: home.php");
 	}
+
+$smarty->assign("script_version",$GLOBALS['json_obj']->script_version);
 
 $smarty->display('index.tpl');
 

@@ -40,7 +40,8 @@
 </script>
 {/literal}
 
-<div class="body">
+<div id="main">
+	<div class="content">
 	<form class="pure-form pure-form-stacked" id="add_campaing" method="POST" action="javascript:void(null);" onsubmit="add()">
 	  <fieldset>
 		   <label for="name">Имя кампании
@@ -63,6 +64,7 @@
 		   <input class="button-xsmall pure-button" type="submit" name="submit" value="Добавить">
 	  </fieldset>
 	</form>
+	</div>
 </div>
 
 {include file="footer.tpl"}

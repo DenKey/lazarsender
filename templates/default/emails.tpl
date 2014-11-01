@@ -1,9 +1,12 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Получатели" page_js="emails.js"}
 
-	<div class='body'>
-		<p>Добавьте новых пользователей для своих рассылок.</p>
-		<p>На добавление каждых 100 пользователей уходит 10 секунд.Если пользователь уже есть в этой группе он не будет добавлен</p>
+<div id="main">
+	<div class="content">
+		<div class="header">
+            <h3>Добавьте новых пользователей для своих рассылок</h3>
+            <p>На добавление каждых 100 пользователей уходит 10 секунд.Если пользователь уже есть в этой группе он не будет добавлен.</p>
+        </div>
 		<form class="pure-form pure-form-stacked" id="form" method="POST" action="javascript:void(null);"  onsubmit="add_emails()">
 			<fieldset>
 				<label for="select_group">Выберите группу пользователей</label>
@@ -28,5 +31,6 @@
 			</fieldset>
 		</form>
 	</div>
+</div>
 
 {include file="footer.tpl"}

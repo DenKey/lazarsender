@@ -11,6 +11,7 @@
     $notes = $stm->fetchColumn();
 
     $smarty->assign("notes", $notes);
+    $smarty->assign("script_version",$GLOBALS['json_obj']->script_version);
   
     $smarty->display("home.tpl");
 ?>

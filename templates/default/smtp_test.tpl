@@ -1,8 +1,10 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Проверка SMTP" page_js="smtp_test.js"}
 
-<div class="body pure-g">
-	<div class="pure-u-1-3">
+<div id="main">
+<div class="content">
+<div class="pure-g">
+	<div class="pure-u-1-2">
 		<form class="pure-form pure-form-stacked" id="test_smtp" method="POST" action="javascript:void(null);" onsubmit="test()">
 	  <fieldset>
 		   <label for="host">Адрес сервера
@@ -32,5 +34,6 @@
     </div>
 	
 </div>
-<div class="modal"></div>
+</div>
+</div>
 {include file="footer.tpl"}

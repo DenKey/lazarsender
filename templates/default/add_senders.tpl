@@ -1,9 +1,12 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Аккаунты" page_js="add_senders.js"}
 
-	<div class='body'>
-		<p>Добавьте аккаунты для рассылки сообщений.На добавление каждых 100 аккаунтов уходит 10 секунд.Если аккаунт уже есть в базе он не будет добавлен.
-		Аккаунты должны быть в формате email:password</p>
+<div id="main">
+	<div class="content">
+		<div class="header">
+	         <p>Добавьте аккаунты для рассылки сообщений.На добавление каждых 100 аккаунтов уходит около 10 секунд.Если аккаунт уже есть в базе он не будет добавлен.Аккаунты должны быть в формате email:password</p>
+	    </div>
+		
 		<form class="pure-form pure-form-stacked" id="senders" method="POST" action="javascript:void(null);" onsubmit="add_senders()">
 			<fieldset>
 				<label for="acc_separator">Разделитель аккаунтов,если не нужно оставьте поле пустым</label>
@@ -16,5 +19,5 @@
 			</fieldset>
 		</form>
 	</div>
-
+</div>
 {include file="footer.tpl"}

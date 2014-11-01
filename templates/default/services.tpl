@@ -1,7 +1,8 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Почтовые сервисы" page_js="services.js"}
 
-<div class="body">
+<div id="main">
+	<div class="content">
 	<a class="pure-button pure-button-active" href="#" onclick="add_service()">Добавить сервис</a></br></br>
 	<table class="pure-table">
 		<thead>
@@ -36,6 +37,7 @@
 	{if $get_page_links != "<span>1</span>"}
 		{$get_page_links}
 	{/if}
-</div>				
+</div>
+</div>			
 
 {include file="footer.tpl"}

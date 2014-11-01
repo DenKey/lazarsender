@@ -14,9 +14,12 @@
 	{$smarty.capture.success}
 {/if}
 
-	<div class="body">
-		<h2>Добавьте адреса из файла</h2>
-		<p>Адреса должны быть размещены в файле построчно,без посторонних символов</p>
+<div id="main">
+	<div class="content">
+		<div class="header">
+            <h3>Добавьте адреса из файла</h3>
+            <p>Адреса должны быть размещены в файле построчно,без посторонних символов</p>
+        </div>
 		<form class="pure-form pure-form-stacked" action="/upload.php" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<label for="select_group">Выберите группу пользователей</label>
@@ -42,5 +45,6 @@
 			</fieldset>
 		</form>
 	</div>
+</div>
 
 {include file="footer.tpl"}

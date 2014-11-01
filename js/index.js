@@ -18,12 +18,6 @@ function go_logging() {
 
 		if (result == "success") {
 			window.location = "home.php";
-		} else {
-			var n = noty({
-				text: result,
-				type: 'error',
-				layout: 'topCenter'
-			});
-		}
+		} 
 	});
 }

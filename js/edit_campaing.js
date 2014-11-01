@@ -75,11 +75,9 @@ $(document).ready(function(){
 			$("[name|='name']").val(obj_from_json.name);
 			$("[name|='subject']").val(obj_from_json.subject);
 
-
-
-				document.getElementById('editor').value = str;
-				tinymce.activeEditor.selection.setContent(str);
-
+			
+			document.getElementById('editor').value = str;
+			tinymce.activeEditor.selection.setContent(str);
 		};
 
 	});
@@ -127,7 +125,7 @@ function getVar(name)
 ///////////
 
 
-function edit_campaing() {
+function edit_campaing(redirect) {
 	var campaing_id =  getVar('id');
 	var html        =  tinymce.activeEditor.getContent();
 
@@ -155,7 +153,9 @@ function edit_campaing() {
  			$.prompt("Кампания сохранена",{
  				buttons:{"Хорошо":true},
  				submit: function(e, v, m, f) {
- 					window.location = "/campaings.php";
+ 					if (redirect) {
+ 						window.location = "/campaings.php";
+ 					};
  				}
  			});
  		} else if (obj.status == 0) {
