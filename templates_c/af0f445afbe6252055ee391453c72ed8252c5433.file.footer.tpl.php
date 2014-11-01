@@ -1,28 +1,25 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-21 01:46:06
-         compiled from "./templates/default/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1632667339544590aed88d71-75896690%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-01 20:16:47
+         compiled from "templates/default/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:18268233145455238fe35ca9-32547928%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'af0f445afbe6252055ee391453c72ed8252c5433' => 
     array (
-      0 => './templates/default/footer.tpl',
-      1 => 1413843469,
+      0 => 'templates/default/footer.tpl',
+      1 => 1414845465,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1632667339544590aed88d71-75896690',
+  'nocache_hash' => '18268233145455238fe35ca9-32547928',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_544590aed8b217_14945933',
+  'unifunc' => 'content_5455238fe37c18_48007989',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_544590aed8b217_14945933')) {function content_544590aed8b217_14945933($_smarty_tpl) {?><div class='footer'>
-		<a href="#">Правила</a>
-		<a href="#">О проекте</a>
-	</div>
+<?php if ($_valid && !is_callable('content_5455238fe37c18_48007989')) {function content_5455238fe37c18_48007989($_smarty_tpl) {?></div>
+
 </body>
-</html>
-<?php }} ?>
+</html><?php }} ?>
