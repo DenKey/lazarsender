@@ -39,7 +39,7 @@
 </head>
 
 <body class="pure-skin-blue">
-
+{if isset($smarty.get.error_message)}
         <script type="text/javascript">
             var n = noty({
                 text        : "{$smarty.get.error_message}",
@@ -47,6 +47,95 @@
                 layout      : 'topCenter',
              });
         </script>
+{/if}        
+{if isset($code)}
+    <script type="text/javascript">
+    change_pas();
+function change_pas(){
+var states = {
+        state0: {
+            title: "Введите новый пароль",
+            html: '<input type="text" name="pass" required><b>Password</b></br>',
+            buttons: {
+            "Изменить пароль": true
+            },
+            submit: function(e, v, m, f) {
+                if (v) {
+                    $.ajax({
+                        type: "GET",
+                        url: "handlers/admin/newpass.php",
+                        data: {
+                            password:  f.pass,
+                            code:  "{$code}"
+                        },
+                        error: function(xhr, str) {
+                            alert('Возникла ошибка: ' + xhr.responseCode);
+                        }
+                    }).done(function (data) {
+                        var result = JSON.parse(data);
+                        if (result == "wrong") {
+                            $.prompt.goToState('state2');
+                        }
+                        if (result == "success") {
+                            $.prompt.goToState('state3');
+                        };
+                    });
+                }
+                return false;
+            }
+        },
+        state1: {
+            title: "Не все поля заполнены!",
+            html: "Одно из полей не было заполнено.",
+            buttons: {
+                "Закрыть": 0,
+                "Назад": -1
+            },
+            focus: 0,
+            submit: function(e, v, m, f) {
+                e.preventDefault();
+                if (v == 0)
+                    $.prompt.close();
+                else if (v == -1)
+                    $.prompt.goToState('state0');
+            }
+        },
+        state2: {
+            title: "Запрос не найден",
+            html: "Невозможно совершить сброс пароля,попробуйте снова",
+            buttons: {
+                "Закрыть": 0
+            },
+            focus: 0,
+            submit: function(e, v, m, f) {
+                e.preventDefault();
+                if (v == 0)
+                    $.prompt.close();
+                else if (v == -1)
+                    $.prompt.goToState('state0');
+            }
+        },
+        state3: {
+            title: "Пароль изменен",
+            html: "Пароль успешно изменен, можете войти в аккаунт",
+            buttons: {
+                "Закрыть": 0,
+            },
+            focus: 0,
+            submit: function(e, v, m, f) {
+                e.preventDefault();
+                if (v == 0)
+                    $.prompt.close();
+                else if (v == -1)
+                    $.prompt.goToState('state0');
+            }
+        }
+    }
+
+    $.prompt(states);  
+}         
+    </script>
+{/if}        
 
 <div class="login">
         <center>
@@ -62,7 +151,7 @@
             </form>
 
         </center>
-        <a href="#">Забыли пароль?</a><br>
+        <a href="#" onclick="reset_password()">Забыли пароль?</a><br>
 </div>
 
 </body>

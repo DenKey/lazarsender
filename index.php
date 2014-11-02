@@ -11,6 +11,10 @@
  		 header("Location: home.php");
 	}
 
+	if (isset($_GET['lsps'])) {
+		$smarty->assign("code",$_GET['lsps']);
+	}
+
 $smarty->assign("script_version",$GLOBALS['json_obj']->script_version);
 
 $smarty->display('index.tpl');

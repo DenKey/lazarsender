@@ -102,7 +102,8 @@ function edit_field(service_id, obj_from_json) {
   				'<input type="number" min="1" name="port" value=""><b>Port</b><br />' +
   				'<input type="number" min="1" name="daylimit" value=""><b>(Limit per day)</b><br />',
   			buttons: {
-            "Добавить": true
+            "Добавить": true,
+            "Отмена": false
   			},
   			submit: function(e, v, m, f) {
   				if (v) {
