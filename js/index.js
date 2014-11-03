@@ -51,7 +51,7 @@ function go_logging() {
   						} else if (result == "mailerror") {
   							$.prompt.goToState('state3');
   						} else if (result == "sent"){
-  							$.prompt("Письмо с инструкциями отправлено вам на почту");
+  							$.prompt.goToState('state4');
   						}
   					});
   				}
@@ -105,7 +105,20 @@ function go_logging() {
   				else if (v == -1)
   					$.prompt.goToState('state0');
   			}
-  		}
+  		},
+      state4: {
+        title: "Отправлено",
+        html: "Письмо с инструкциями отправлено вам на почту",
+        buttons: {
+          "Закрыть": 0
+        },
+        focus: 0,
+        submit: function(e, v, m, f) {
+          e.preventDefault();
+          if (v == 0)
+            $.prompt.close();
+        }
+      }
   	}
 
   	$.prompt(states);

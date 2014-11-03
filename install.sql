@@ -62,6 +62,14 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `notes` mediumtext NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `reset_password_log` (
+`id` int(11) NOT NULL,
+  `login` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `code` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `request` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 INSERT INTO `admins` (`id`, `login`, `email`, `password`, `group`, `notes`) VALUES
 (1, 'admin', 'admin@lazarsender.com', 'adpexzg3FUZAk', 0, 'Successful mailing !\n\nLazar Sender 0.1.2 26.10.2014 18:12\n- Added the possibility of gradual mailing campaigns\n- Bug fixed, editing user''s\n.\nLazar Sender 0.1.1 23.10.2014 21:15\n- The opportunity to view the logs directly from the control panel \n- Script is transferred to work with the database via PDO \n- Script works using Smarty templating \n- Added ability to set the type of encryption for SMTP \n- Added ability to test the SMTP settings \n- Added ability to edit the date of the last distribution to account \n- Fixed bug with sending a test email campaigns \n- Other minor fixes\n\nLazar Sender 0.1  16.10.2014  4:16\n');
 
@@ -69,7 +77,7 @@ ALTER TABLE `admins`
  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `admins`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `campaings`
  ADD PRIMARY KEY (`id`);
@@ -87,18 +95,24 @@ ALTER TABLE `senders`
 ALTER TABLE `services`
  ADD PRIMARY KEY (`id`);
 
+ ALTER TABLE `reset_password_log`
+ ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `campaings`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `groups`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `recepients`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100539;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `senders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `services`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `reset_password_log`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 

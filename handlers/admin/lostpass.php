@@ -3,6 +3,7 @@
 	require_once '../../include/db_connect.php';
 	require_once '../../phpmailer/class.phpmailer.php';
 	require_once '../../phpmailer/extras/class.html2text.php';
+	date_default_timezone_set('Etc/UTC');
 
 	if (isset($_GET['login']) && isset($_GET['email'])) {
 		$login = $_GET['login'];
@@ -20,12 +21,14 @@
 	if ($stm->rowCount() == 1) {
 		$time_now = time();
 		$hash = crypt($login.$email, $time_now);
-	
+	    $today = date("Y-m-d");
+
 		// record into db
-		$stn = $pdo->prepare("INSERT INTO reset_password_log(login,email,code) VALUES (:login,:email,:code)");
+		$stn = $pdo->prepare("INSERT INTO reset_password_log(login,email,code,request) VALUES (:login,:email,:code,:today)");
 		$stn->bindParam(":login",$login);
 		$stn->bindParam(":email",$email);
 		$stn->bindParam(":code",$hash);
+		$stn->bindParam(":today",$today);
 		$stn->execute();
 
 		$sent_status = send_email($login,$email,$hash); 

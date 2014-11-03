@@ -1,6 +1,7 @@
 <?php
 	require_once '../../include/config.php';
 	require_once '../../include/db_connect.php';
+	date_default_timezone_set('Etc/UTC');
 
 	if (isset($_GET['password']) && isset($_GET['code'])) {
 		$password = $_GET['password'];
@@ -19,8 +20,9 @@
 		
 		$newpassword = crypt($password,$record['login']);
 
-		$create_time = substr($record['request'], 0,10);
+		$create_time = $record['request'];
 		$today = date("Y-m-d");
+
 		if ($create_time == $today) {
 			$stn = $pdo->prepare("UPDATE admins SET password=:password WHERE login=:login");		
 			$stn->bindParam(":password",$newpassword);
