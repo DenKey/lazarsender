@@ -1,8 +1,9 @@
 {config_load file="lazar.conf"}
 {include file="header.tpl" title="Просмотр группы" page_js="group.js"}
 
-		<div class="body">
 
+<div id="main">
+        <div class="content">
 		  {if $count == 0 }
 		  		<p align='center'>В группе еще нет адресов</p>
 		  {else}
@@ -22,17 +23,10 @@
 					{/foreach}
 				</tbody>
 			</table>
-			<br>
-				{$get_result_text}
-				<br>
-				{$get_prev_page_link}
-				<br>
-				{if $get_page_links != "<span>1</span>"}
-					{$get_page_links}
-				{/if}
+{include file="paging.tpl" get_prev_page_link=$get_prev_page_link get_next_page_link=$get_next_page_link get_page_links=$get_page_links get_result_text=$get_result_text}
 		
 		{/if}
 
 		</div>
-
+</div>
 {include file="footer.tpl"}

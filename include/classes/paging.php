@@ -4,15 +4,23 @@
     #  
     # modified 22.10.2014 19:33 by me
     # changed DB extension to PDO
+    #
+    #  update 03.11.2014 23:11 
+    #  delete all view from class
+    #  Short manual:
+    #    get_result_text() return string with info example: Show from 1 to 15 
+    #    get_prev_page_link() if prev page has return array(link,prev_page_text) else empty string 
+    #    get_next_page_link() if next page has return array(link,next_page_text) else empty string 
+    #    get_page_links()  return array of arrays = array(url,pagenumber) for current page into array add 'pagenumber'
+    #    
     ###########################################
 
 class Paging { 
 
 
-private $link_padding = 10; 
-private $page_link_separator = ' '; 
-private $next_page_text = 'следующая →'; 
-private $prev_page_text = '← предыдущая'; 
+private $link_padding = 5; 
+private $next_page_text = '&#187'; 
+private $prev_page_text = '&#171'; 
 private $result_text_pattern = 'Показано с %s по %s из %s'; 
 private $page_var = 'p'; 
 
@@ -117,7 +125,7 @@ public function get_page_links()
     if ( $end + 1 < $this->total_pages ) $page_link_list[] = $this->get_page_link( $end +1, $end + 2 == $this->total_pages ? '' : '...' ); 
     if ( $end + 1 <= $this->total_pages ) $page_link_list[] = $this->get_page_link( $this->total_pages ); 
 
-    return implode($this->page_link_separator, $page_link_list); 
+    return $page_link_list; 
 } 
 
 public function get_next_page_link() 
@@ -138,9 +146,10 @@ private function get_page_link($page, $text='')
     { 
         $reg = '/((&|^)'.$this->page_var.'=)[^&#]*/'; 
         $url = '?'.( preg_match( $reg, $_SERVER['QUERY_STRING'] ) ? preg_replace($reg, '${1}'.$page, $_SERVER['QUERY_STRING']) : ( $_SERVER['QUERY_STRING'] ? $_SERVER['QUERY_STRING'].'&' : '' ).$this->page_var.'='.$page); 
-        return '<a href="'.$url.'">'.$text.'</a>'; 
-    } 
-    return '<span>'.$text.'</span>'; 
+        return array($url,$text);
+    }
+        return $text;         
+ 
 } 
 
 private function query_paging() 
@@ -157,5 +166,6 @@ private function query_paging()
 
     return $q; 
 } 
+
 } 
 ?>

@@ -28,9 +28,7 @@
 
 	$smarty->assign("senders",$senders);
 
-	$smarty->assign("get_result_text",$_PAGING->get_result_text());
-	$smarty->assign("get_prev_page_link",$_PAGING->get_prev_page_link());
-	$smarty->assign("get_page_links",$_PAGING->get_page_links());		
+	paging($_PAGING,$smarty);  // set variables and setting for paging, from view_config.php	
 
 	$smarty->display("senders.tpl");
 ?>

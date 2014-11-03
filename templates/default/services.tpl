@@ -29,14 +29,7 @@
 		{/foreach}
 		</tbody>
 	</table>
-	<br>
-	{$get_result_text}
-	<br>
-	{$get_prev_page_link}
-	<br>
-	{if $get_page_links != "<span>1</span>"}
-		{$get_page_links}
-	{/if}
+{include file="paging.tpl" get_prev_page_link=$get_prev_page_link get_next_page_link=$get_next_page_link get_page_links=$get_page_links get_result_text=$get_result_text}
 </div>
 </div>			
 
