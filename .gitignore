@@ -1,4 +1,2 @@
-templates_c/
-tmp/
-cache/
-
+tmp/**/*.log
+templates_c/**/*.php
