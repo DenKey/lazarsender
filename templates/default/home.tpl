@@ -4,6 +4,7 @@
 
 <div id="main">
         <div class="header">
+            <img src="{#img_path#}/logo.png">
             <h1>Lazar Sender {$script_version}</h1>
             <h2>Добро пожаловать в панель управления</h2>
         </div>

@@ -1,7 +1,9 @@
+{config_load file="lazar.conf"}
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="{#img_path#}favicon.ico"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
