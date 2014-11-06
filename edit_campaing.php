@@ -12,9 +12,8 @@
 		exit("notfill");
 	}
 	
-	$sql = "SELECT groups FROM campaings WHERE id=$id";
-
-	$stn = $pdo->prepare($sql);
+	$stn = $pdo->prepare("SELECT groups FROM campaings WHERE id=:id");
+	$stn->bindParam(":id",$id);
 
 	$stn->execute();
 	$result = $stn->fetch();

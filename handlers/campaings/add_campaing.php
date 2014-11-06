@@ -2,7 +2,7 @@
 	require_once '../../include/auth.php';
 	require_once '../../include/db_connect.php';
 
-if (isset($_REQUEST['name']) && isset($_REQUEST['select']) && isset($_REQUEST['subject'])) {
+if (isset($_REQUEST['name'],$_REQUEST['select'],$_REQUEST['subject'])) {
 		$name     = $_REQUEST['name'];
 		$select   = array();
 		$subject  = $_REQUEST['subject'];
@@ -11,9 +11,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['select']) && isset($_REQUEST['s
 			$select[] = $value;
 		}
 
-			$check_query = sprintf("SELECT * FROM campaings WHERE name='%s'",
-		 							$name);
-			$stm = $pdo->prepare($check_query);
+			$stm = $pdo->prepare("SELECT * FROM campaings WHERE name=:name");
+			$stm->bindParam(":name",$name);
 			try {
 				$stm->execute();
 			} catch (PDOException $e) {
@@ -27,12 +26,11 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['select']) && isset($_REQUEST['s
 				$obj = json_encode($obj);
 		 		echo $obj;
 		 	} else {
-		 		$insert_query = sprintf("INSERT INTO campaings(name,groups,subject)".
-								" VALUES ('%s','%s','%s')",
-								$name,
-								json_encode($select),
-								$subject);
-		 	 $sth = $pdo->prepare($insert_query);
+		 	 $sth = $pdo->prepare("INSERT INTO campaings(name,groups,subject)".
+								" VALUES (:name,:select,:subject)");
+		 	 $sth->bindParam(":name");
+		 	 $sth->bindParam(":select",json_encode($select));
+		 	 $sth->bindParam(":subject",$subject);
 		 	 try {
 				$sth->execute();
 			} catch (PDOException $e) {

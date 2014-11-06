@@ -9,9 +9,8 @@
 		exit();
 	}
 
-	$q_group_delete = "DELETE FROM groups WHERE id=".$id;
-
-	$stm =  $pdo->prepare($q_group_delete);
+	$stm =  $pdo->prepare("DELETE FROM groups WHERE id=:id");
+	$stm->bindParam(":id",$id);
 		 	try {
 				$stm->execute();
 			} catch (PDOException $e) {
@@ -19,9 +18,8 @@
 				echo "MySql Error.Watch log.";
 			}
 
-	$q_group_mails_delete = "DELETE FROM recepients WHERE mail_group=".$id;
-
-	$sth =  $pdo->prepare($q_group_mails_delete);
+	$sth =  $pdo->prepare("DELETE FROM recepients WHERE mail_group=:id");
+	$sth->bindParam(":id",$id);
 		 	try {
 				$sth->execute();
 			} catch (PDOException $e) {

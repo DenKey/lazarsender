@@ -1,3 +1,10 @@
+Lazar Sender 0.1.4 02.11.2014 20:40
+- Add filtration of all user query
+- Fixed bug with views users in "Options"
+- Added logo and favicon for LazarSender
+- Code refactoring, delete excess variables,reduced some expresisons
+- Other minor fixes
+
 Lazar Sender 0.1.3 02.11.2014 04:15 
 - Default theme changed with using PureCCS
 - Fixed bug with ajax loading in "Edit campaings"

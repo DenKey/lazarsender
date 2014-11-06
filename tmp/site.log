@@ -154,3 +154,23 @@ File: '/var/www/lazarsender/sender.php' Line: 190
 2014-10-26  16:45:40 
 42S22,1054,Unknown column 'sentcount' in 'field list'
 
+File: '/var/www/lazarsender/handlers/emails/delete_email.php' Line: 17 
+2014-11-06  18:11:19 
+42000,1064,You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+
+File: '/var/www/lazarsender/include/functions.php' Line: 137 
+2014-11-06  19:53:05 
+Email not addedArray
+
+File: '/var/www/lazarsender/upload.php' Line: 34 
+2014-11-06  20:25:29 
+Error loading file
+
+File: '/var/www/lazarsender/upload.php' Line: 46 
+2014-11-06  20:25:29 
+Can't open temporary file.
+
+File: '/var/www/lazarsender/upload.php' Line: 54 
+2014-11-06  20:25:29 
+Временный файл /var/www/lazarsender/tmp/1415298329_email.txt не удален
+

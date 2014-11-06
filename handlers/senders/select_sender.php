@@ -8,9 +8,8 @@
 		exit();
 	}
 
-	$select_query = "SELECT * FROM senders WHERE id=".$id;
-
-	$stm =  $pdo->prepare($select_query);
+	$stm =  $pdo->prepare("SELECT * FROM senders WHERE id=:id");
+	$stm->bindParam(":id",$id);
 	try {
 		$stm->execute();
 	} catch (PDOException $e) {

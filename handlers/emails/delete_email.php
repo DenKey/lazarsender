@@ -8,9 +8,8 @@
 		exit();
 	}
 
-	$email_query =  "DELETE FROM recepients WHERE id=".$email_id;
-
-	$stm =  $pdo->prepare($email_query);
+	$stm =  $pdo->prepare("DELETE FROM recepients WHERE id=:email_id");
+	$stm->bindParam(":email_id",$email_id);
 		 	try {
 				$stm->execute();
 			} catch (PDOException $e) {

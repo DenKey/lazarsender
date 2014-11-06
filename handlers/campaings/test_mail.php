@@ -5,16 +5,15 @@
 	require_once '../../phpmailer/class.phpmailer.php';
 	require_once '../../phpmailer/extras/class.html2text.php';
 
-	if (isset($_REQUEST['id']) && isset($_REQUEST['email'])) {
+	if (isset($_REQUEST['id'],$_REQUEST['email'])) {
 		$id = $_REQUEST['id'];
 		$sendto = $_REQUEST['email'];
 	} else {
 		exit('fail');
 	}
-
-	$select_query = sprintf("SELECT * FROM campaings WHERE id=%s",
-							$id);
-	$stm =  $pdo->prepare($select_query);
+	
+	$stm =  $pdo->prepare("SELECT * FROM campaings WHERE id=:id");
+	$stm->bindParam(":id",$id);
 		 	try {
 				$stm->execute();
 			} catch (PDOException $e) {

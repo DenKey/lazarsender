@@ -8,10 +8,8 @@
 		exit();
 	}
 
-	$delete_query = "DELETE FROM senders WHERE id=".$id;
-
-	$stm =  $pdo->prepare($delete_query);
-
+	$stm =  $pdo->prepare("DELETE FROM senders WHERE id=:id");
+	$stm->bindParam(":id",$id);
 	try {
 		$stm->execute();
 	} catch (PDOException $e) {

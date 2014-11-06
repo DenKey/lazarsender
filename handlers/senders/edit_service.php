@@ -2,41 +2,26 @@
 	require_once '../../include/auth.php';
 	require_once '../../include/db_connect.php';
 
-	if (isset($_REQUEST['id'])) {
-		$id = $_REQUEST['id'];
-	} else {
-		exit();
-	}
- 	
- 	if (isset($_REQUEST['server']) && isset($_REQUEST['port'])){
- 		$server = $_REQUEST['server'];
-		$port   = $_REQUEST['port'];
- 	} else {
- 		exit();
- 	}
- 	if (isset($_REQUEST['daylimit']) && isset($_REQUEST['service'])){
- 		$daylimit    = $_REQUEST['daylimit'];
+ if (isset($_REQUEST['id'],$_REQUEST['server'],$_REQUEST['port'],$_REQUEST['daylimit'],$_REQUEST['service'],$_REQUEST['crypt'])){
+ 		$server   = $_REQUEST['server'];
+		$port     = $_REQUEST['port'];
+		$id       = $_REQUEST['id'];
+ 		$daylimit = $_REQUEST['daylimit'];
 		$service  = $_REQUEST['service'];
- 	}
- 	if (isset($_REQUEST['crypt'])){
  		$crypt    = $_REQUEST['crypt'];
  	} else {
- 		exit();
+ 		exit("notfill");
  	}
-	
-	
 
-	$edit_query = sprintf("UPDATE services SET server='%s'".
-						  " ,port='%d',daylimit='%d',crypt='%s',".
-		                  " service='%s' WHERE id=%d",
-		                 $server,
-		                 $port,
-		                 $daylimit,
-		                 $crypt,
-		                 $service,
-		                 $id);
-
- 	$stm =  $pdo->prepare($edit_query);
+ 	$stm =  $pdo->prepare("UPDATE services SET server=:server".
+				  ",port=:port,daylimit=:daylimit,crypt=:crypt,".
+		          "service=:service WHERE id=:id");
+ 	$stm->bindParam(":server",$server);
+ 	$stm->bindParam(":port",$port);
+ 	$stm->bindParam(":daylimit",$daylimit);
+ 	$stm->bindParam(":crypt",$crypt);
+ 	$stm->bindParam(":service",$service);
+ 	$stm->bindParam(":id",$id);
 	try {
 		$stm->execute();
 	} catch (PDOException $e) {

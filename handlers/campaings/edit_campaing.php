@@ -2,14 +2,13 @@
 	require_once '../../include/auth.php';
 	require_once '../../include/db_connect.php';
 
-if (isset($_REQUEST['id']) && isset($_REQUEST['name']) && isset($_REQUEST['subject'])) {
+if (isset($_REQUEST['id'],$_REQUEST['name'],$_REQUEST['subject'])) {
 		$name     = $_REQUEST['name'];
 		$subject  = $_REQUEST['subject'];
 		$id 	  = intval($_REQUEST['id']);
 	
-			$check_query = sprintf("SELECT * FROM campaings WHERE id='%d'",
-		 							$id);
-			$stm =  $pdo->prepare($check_query);
+			$stm =  $pdo->prepare("SELECT * FROM campaings WHERE id=:id");
+			$stm->bindParam(":id",$id);
 		 	try {
 				$stm->execute();
 			} catch (PDOException $e) {
@@ -22,12 +21,11 @@ if (isset($_REQUEST['id']) && isset($_REQUEST['name']) && isset($_REQUEST['subje
 				$obj = json_encode($obj);
 		 		echo $obj;
 		 	} else {
-		 		$update_query = sprintf("UPDATE campaings SET name='%s',".
-		 								"subject='%s' WHERE id='%d'",
-										$name,
-										$subject,
-										$id);
-		 		$sth =  $pdo->prepare($update_query);
+		 		$sth =  $pdo->prepare("UPDATE campaings SET name=:name,".
+		 							  "subject=:subject WHERE id=:id");
+		 		$sth->bindParam(":name",$name);
+		 		$sth->bindParam(":subject",$subject);
+		 		$sth->bindParam(":id",$id);
 			 	try {
 					$sth->execute();
 				} catch (PDOException $e) {

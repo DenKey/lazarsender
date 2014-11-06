@@ -2,7 +2,7 @@
 	require_once '../../include/auth.php';
 	require_once '../../include/db_connect.php';
 
-	if (isset($_REQUEST['notes']) && isset($_REQUEST['id'])) {
+	if (isset($_REQUEST['notes'],$_REQUEST['id'])) {
 		$notes = $_REQUEST['notes'];
 		$id = $_REQUEST['id'];
 	} else {

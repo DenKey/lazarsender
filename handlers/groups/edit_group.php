@@ -9,11 +9,9 @@
 		exit();
 	}
 
-	$update_query = sprintf("UPDATE groups SET group_name='%s' WHERE id=%d",
-							$new_name,
-					 		$group_id);
-
-	$stm =  $pdo->prepare($update_query);
+	$stm =  $pdo->prepare("UPDATE groups SET group_name=:new_name WHERE id=:group_id");
+	$stm->bindParam(":new_name",$new_name);
+	$stm->bindParam(":group_id",$group_id);
 		 	try {
 				$stm->execute();
 			} catch (PDOException $e) {

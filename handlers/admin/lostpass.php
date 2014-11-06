@@ -5,7 +5,7 @@
 	require_once '../../phpmailer/extras/class.html2text.php';
 	date_default_timezone_set('Etc/UTC');
 
-	if (isset($_GET['login']) && isset($_GET['email'])) {
+	if (isset($_GET['login'],$_GET['email'])) {
 		$login = $_GET['login'];
 		$email = $_GET['email'];
 	} else {

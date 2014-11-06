@@ -8,8 +8,8 @@
 		exit();
 	}
 
-	$sql =  "DELETE FROM admins WHERE id=$id";
-	$stm = $pdo->prepare($sql);
+	$stm = $pdo->prepare("DELETE FROM admins WHERE id=:id");
+	$stm->bindParam(":id",$id);
 
 	if (!$stm->execute()) {
 		echo "not";

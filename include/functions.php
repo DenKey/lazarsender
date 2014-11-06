@@ -8,9 +8,8 @@
 	function add_emails_group($name){
 		global $pdo;
 
-		$insert_query = "INSERT INTO groups(group_name) VALUES ('$name')";
-
-		$stm = $pdo->prepare($insert_query);
+		$stm = $pdo->prepare("INSERT INTO groups(group_name) VALUES (:name)");
+		$stm->bindParam(":name",$name);
 		try {
 				$stm->execute();
 		} catch (PDOException $e) {
@@ -47,8 +46,9 @@
 
 			if ($GLOBALS['json_obj']->count_emails) {
 				$id = $group['id'];
-				$stn = $pdo->prepare("SELECT * FROM recepients WHERE mail_group =?");
-				if (!$stn->execute(array($id))) {
+				$stn = $pdo->prepare("SELECT * FROM recepients WHERE mail_group =:id");
+				$stn->bindParam(":id",$id);
+				if (!$stn->execute()) {
 					logging(implode(",",$stn->errorInfo()),true,__FILE__,__LINE__);
 				}
 				$user_count = $stn->rowCount();
@@ -85,9 +85,9 @@
 				// и добавляем в массив $groups_final
 
 					foreach ($groups as $group_id) {
-						$select_query = "SELECT * FROM groups WHERE id='$group_id'";
 
-						$stm = $pdo->prepare($select_query);
+						$stm = $pdo->prepare("SELECT * FROM groups WHERE id=:id");
+						$stm->bindParam(":id",$group_id);
 						try {
 							$stm->execute();
 						} catch (PDOException $e) {
@@ -128,14 +128,13 @@
 
 		foreach ($emails as $key => $value) {
 
-		$select_query = "SELECT * FROM recepients WHERE email='$value' AND mail_group='$select_group'";
-
-		$stm = $pdo->prepare($select_query);
-		
+		$stm = $pdo->prepare("SELECT * FROM recepients WHERE email=:email AND mail_group=:select_group");
+		$stm->bindParam(":email",$value);
+		$stm->bindParam(":select_group",$select_group);
 		try {
 			$stm->execute();
 		} catch (PDOException $e) {
-			logging("Email not added".$stm->errorInfo(),true,__FILE__,__LINE__);
+			logging(implode(",",$stm->errorInfo()),true,__FILE__,__LINE__);
 			echo "MySql Error.Watch log.";
 		}
 	
@@ -143,9 +142,10 @@
 				$has_in_db++;
 				continue;
 			} else {
-			$insert_query = "INSERT INTO recepients(email,mail_group) VALUES ('$value','$select_group')";
 
-				$sth = $pdo->prepare($insert_query);
+			$sth = $pdo->prepare("INSERT INTO recepients(email,mail_group) VALUES (:email,:select_group)");
+			$sth->bindParam(":email",$value);
+			$sth->bindParam(":select_group",$select_group);
 
 				try {
 					$sth->execute();
@@ -230,11 +230,8 @@
 				continue;
 			}
 
-			$email = $value['email'];
-
-			$select_query = "SELECT * FROM senders WHERE  email = '$email'";
-
-			$stm = $pdo->prepare($select_query);
+			$stm = $pdo->prepare("SELECT * FROM senders WHERE  email =:email");
+			$stm->bindParam(":email",$value['email']);
 
 			try {
 				$stm->execute();
@@ -252,10 +249,11 @@
 								$value['login'],
 								$value['service']);
 
-				 $insert_query = "INSERT INTO senders(email,password,login,service) VALUES ('$array[0]','$array[1]','$array[2]','$array[3]')";
-
-				 $sth = $pdo->prepare($insert_query);
-
+				 $sth = $pdo->prepare("INSERT INTO senders(email,password,login,service) VALUES (:email,:password,:login,:service)");
+				 $sth->bindParam(":email",$array[0]);
+				 $sth->bindParam(":password",$array[1]);
+				 $sth->bindParam(":login",$array[2]);
+				 $sth->bindParam(":service",$array[3]);
 				 try {
 					$sth->execute();
 				} catch (PDOException $e) {
